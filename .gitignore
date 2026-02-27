@@ -1,0 +1,46 @@
+# ── Python ──────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+
+# ── Large training outputs (not needed for app) ─
+results/
+results_ensemble/
+augmented_data/
+
+# ── Extra model weights (only best_augmented_model.pth is used) ─
+results_augmented/best_densenet121.pth
+results_augmented/best_efficientnet_b0.pth
+results_augmented/best_mobilenet_v3_large.pth
+
+# ── Dataset images not used by the app ──────────
+1. COVID-19/
+3. Consolidation Lung/
+4. Atelectasis/
+5. Tuberculosis/
+6. Pneumothorax/
+7. Edema/
+8. Pneumonia/
+# Keep only the CSI subfolder from the two folders app.py references
+2. Lungs Cancer/CT Scan/
+2. Lungs Cancer/CXR/
+9. Normal/CT Scan/
+9. Normal/CXR/
+
+# ── Streamlit secrets (added via Streamlit Cloud UI) ─
+.streamlit/secrets.toml
+
+# ── Vercel landing page (separate deployment) ───
+vercel-deploy/
+
+# ── Training scripts not needed at runtime ───────
+ensemble_classifier.py
+lung_cancer_classifier.py
+init_supabase.sql
+
+# ── OS ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
