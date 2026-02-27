@@ -53,7 +53,6 @@ def init_supabase() -> Client | None:
         key = st.secrets["SUPABASE_KEY"]
         return create_client(url, key)
     except Exception as e:
-        st.warning("⚠️ Supabase credentials not found. Database saving disabled.")
         return None
 
 supabase_client = init_supabase()
@@ -486,14 +485,6 @@ def main():
     # ── HERO ──────────────────────────────────────────────
     st.markdown("""
     <div style="text-align:center; padding: 1.5rem 0 0.5rem;">
-        <div style="display:flex; justify-content:center; margin-bottom:18px;">
-            <div class="hero-pill">
-                <div class="hero-pill-dot">
-                    <svg width="8" height="8" viewBox="0 0 10 10" fill="white"><circle cx="5" cy="5" r="3"/></svg>
-                </div>
-                &nbsp;Pioneering Respiratory Analytics
-            </div>
-        </div>
         <div style="margin-bottom:14px; line-height:1.08;">
             <span class="hero-plain">Resonair&nbsp;</span><span class="hero-accent">AI</span>
         </div>
@@ -691,7 +682,7 @@ def main():
     plco_col1, plco_col2, plco_col3 = st.columns(3, gap="medium")
 
     with plco_col1:
-        st.markdown('<div class="glass-card"><h3>&#128100; Demographics</h3></div>', unsafe_allow_html=True)
+        st.markdown('<div class="glass-card"><h3>Demographics</h3></div>', unsafe_allow_html=True)
         age = st.number_input("Age (years)", min_value=40, max_value=90, value=55, step=1)
         education = st.selectbox(
             "Education Level",
@@ -706,13 +697,13 @@ def main():
         bmi = st.number_input("BMI (kg/m²)", min_value=10.0, max_value=60.0, value=27.0, step=0.5)
 
     with plco_col2:
-        st.markdown('<div class="glass-card"><h3>&#129657; Medical History</h3></div>', unsafe_allow_html=True)
+        st.markdown('<div class="glass-card"><h3>Medical History</h3></div>', unsafe_allow_html=True)
         copd = st.selectbox("COPD Diagnosis?", ["No", "Yes"])
         personal_cancer = st.selectbox("Personal History of Cancer?", ["No", "Yes"])
         family_lung_cancer = st.selectbox("Family History of Lung Cancer?", ["No", "Yes"])
 
     with plco_col3:
-        st.markdown('<div class="glass-card"><h3>&#128684; Smoking History</h3></div>', unsafe_allow_html=True)
+        st.markdown('<div class="glass-card"><h3>Smoking History</h3></div>', unsafe_allow_html=True)
         smoking_status = st.selectbox("Smoking Status", ["Never smoker", "Former smoker", "Current smoker"])
         if smoking_status != "Never smoker":
             cigs_per_day = st.number_input("Cigarettes per Day (avg)", min_value=0, max_value=100, value=20, step=1)
