@@ -1,0 +1,10 @@
+{
+    "name": "resonair",
+    "version": 2,
+    "crons": [
+        {
+            "path": "/api/keepalive",
+            "schedule": "0 0 * * *"
+        }
+    ]
+}

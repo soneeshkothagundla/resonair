@@ -34,7 +34,6 @@ results_augmented/best_mobilenet_v3_large.pth
 .streamlit/secrets.toml
 
 # ── Vercel landing page (separate deployment) ───
-vercel-deploy/
 
 # ── Training scripts not needed at runtime ───────
 ensemble_classifier.py
